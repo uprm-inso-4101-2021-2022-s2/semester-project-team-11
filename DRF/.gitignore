@@ -1,0 +1,12 @@
+*.log
+*.pot
+*.pyc
+*.coverage
+__pycache__
+db.sqlite3
+media
+/venv
+/htmlcov
+
+# Backup files # 
+*.bak 
