@@ -8,6 +8,7 @@ React Steps: (Open terminal in /REACT/)
 
 - Shutting Down:
     CTRL + C
+    Y
 
 - Starting Up After Shut Down:                      # Must start django server before React
     npm start
