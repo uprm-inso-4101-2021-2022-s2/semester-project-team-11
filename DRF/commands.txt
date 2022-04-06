@@ -12,7 +12,7 @@ Django Steps: (Open terminal in /DRF/)
     py manage.py createsuperuser                        # Create an admin account (user=admin, password=password)
     py manage.py runserver                              # Run django backend
 
-- Testing:
+- Testing: # Postman app as a tool to see api
     coverage run --omit='*/venv/*' manage.py test       # Run tests and Omit venv folder from being tested
     coverage html                                       # Write index.html in htmlcov/, run it in a browser to see test results
 
@@ -28,7 +28,3 @@ Django Steps: (Open terminal in /DRF/)
 - After making model changes or large modifications
     py manage.py makemigrations                         # Following two commands build the sqlite db
     py manage.py migrate
-
-
-# Postman app as a tool to see api
-# Make gitignore file for venv folder, htmlcov folder, and db.sqlite3 ??
