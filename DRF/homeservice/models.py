@@ -3,11 +3,14 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 # Create your models here.
-class Listing(models.Model):
-    name = models.CharField(max_length=100)
+class ClientAccount(models.Model):
+    client_id = models.IntegerField(default=1)
+    client_name = models.CharField(max_length=128)
+    email = models.CharField(max_length=128)
+    password = models.CharField(max_length=128)
 
     def __str__(self):
-        return self.name
+        return self.client_name
 
 class Job(models.Model):
     class JobObjects(models.Manager):
@@ -18,12 +21,9 @@ class Job(models.Model):
         ('incomplete', 'Incomplete'),
         ('fulfilled', 'Fulfilled')
     )
-
-    listing = models.ForeignKey(Listing, on_delete=models.PROTECT, default=1)
     title = models.CharField(max_length=250)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='job_post')
     content = models.TextField(null=True)
-    specialty = models.CharField(max_length=128)
     price = models.IntegerField()
     status = models.CharField(max_length=10, choices=options, default='incomplete')
     slug = models.SlugField(max_length=250, unique_for_date='posted')
@@ -36,3 +36,10 @@ class Job(models.Model):
 
     def __str__(self):
         return self.title
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    jobs = models.ManyToManyField(Job)
+
+    def __str__(self):
+        return self.name
