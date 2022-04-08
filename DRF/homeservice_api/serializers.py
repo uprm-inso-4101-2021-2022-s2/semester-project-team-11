@@ -18,6 +18,7 @@ class JobSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'title',
+            'time',
             'owner',
             'content',
             'price',

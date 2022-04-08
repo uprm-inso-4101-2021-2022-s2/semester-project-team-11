@@ -4,7 +4,6 @@ from django.utils import timezone
 
 # Create your models here.
 class ClientAccount(models.Model):
-    client_id = models.IntegerField(default=1)
     client_name = models.CharField(max_length=128)
     email = models.CharField(max_length=128)
     password = models.CharField(max_length=128)
@@ -12,6 +11,7 @@ class ClientAccount(models.Model):
     def __str__(self):
         return self.client_name
 
+# Add category field ???
 class Job(models.Model):
     class JobObjects(models.Manager):
         def get_queryset(self):
@@ -26,13 +26,14 @@ class Job(models.Model):
     content = models.TextField(null=True)
     price = models.IntegerField()
     status = models.CharField(max_length=10, choices=options, default='incomplete')
-    slug = models.SlugField(max_length=250, unique_for_date='posted')
-    posted = models.DateTimeField(default=timezone.now)
+    time = models.DateTimeField(default=timezone.now)
+
+    slug = models.SlugField(max_length=250, unique_for_date='time')
     objects = models.Manager() # default manager
     jobobjects = JobObjects()
 
     class Meta:
-        ordering = ('-posted',)
+        ordering = ('-time',)
 
     def __str__(self):
         return self.title

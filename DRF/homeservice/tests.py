@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from homeservice.models import Job, Category
 
 # Create your coverage tests here.
-
 class Test_Create_Job(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -12,7 +11,6 @@ class Test_Create_Job(TestCase):
             username='test_user1', password='123456789'
         )
         testjob = Job.objects.create(
-            category_id=1,
             title='Job Title',
             owner_id=1,
             content='Job Content',
@@ -28,7 +26,7 @@ class Test_Create_Job(TestCase):
         title = f'{job.title}'
         content = f'{job.content}'
         owner = f'{job.owner}'
-        price = f'{job.price}'
+        price = job.price
         status = f'{job.status}'
 
         self.assertEqual(owner, 'test_user1')
