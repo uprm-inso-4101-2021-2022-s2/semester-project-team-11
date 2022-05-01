@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('homeservice.urls', namespace='homeservice')),
     path('api/', include('homeservice_api.urls', namespace='homeservice_api')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
