@@ -14,6 +14,7 @@
     - venv\Scripts\activate
     - pip install django
     - pip install djangorestframework
+    - pip install djangorestframework-simplejwt
     - pip install django-cors-headers
     - pip install coverage                                
     - py manage.py makemigrations                         

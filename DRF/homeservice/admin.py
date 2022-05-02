@@ -4,6 +4,7 @@ from .import models
 # Register your models here.
 @admin.register(models.Job)
 class OwnerAdmin(admin.ModelAdmin):
+    # Category does not appear ???
     job_display = ('title', 'id','owner', 'content', 'category', 'price', 'status')
     prepopulated_fields = {'slug': ('title',), }
 
