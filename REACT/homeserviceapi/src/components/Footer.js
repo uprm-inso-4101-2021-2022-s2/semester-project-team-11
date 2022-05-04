@@ -34,13 +34,20 @@ function Copyright() {
 
 const footers = [
 	{
-		title: 'Company',
-		description: ['Team', 'History', 'Contact us', 'Locations'],
+		title: 'Dev Team',
+		description: [
+			'Daniel Mestres', 
+			'Emilio De Jesus', 
+			'Milton Velez', 
+			'Dylan Mendez', 
+			'Natanael Santiago',
+			'Angel Gonzalez'
+		],
 	},
 	{
 		title: 'Features',
 		description: [
-			'Cool stuff',
+			'Job Viewing',
 			'Random feature',
 			'Team feature',
 			'Developer stuff',

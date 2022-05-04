@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Jobs from './components/Jobs';
-import JobLoadingComponent from './components/JobLoading';
+import Jobs from './components/jobs';
+import JobLoadingComponent from './components/jobLoading';
 
 function App() {
   const JobLoading = JobLoadingComponent(Jobs);
