@@ -48,24 +48,16 @@ const footers = [
 		title: 'Features',
 		description: [
 			'Job Viewing',
-			'Random feature',
-			'Team feature',
-			'Developer stuff',
-			'Another one',
+			'User Creation',
+			'User Login',
+			'User Logout',
 		],
 	},
 	{
 		title: 'Resources',
 		description: [
-			'Resource',
-			'Resource name',
-			'Another resource',
-			'Final resource',
+			'Github',
 		],
-	},
-	{
-		title: 'Legal',
-		description: ['Privacy policy', 'Terms of use'],
 	},
 ];
 
@@ -82,8 +74,9 @@ function Footer() {
 							</Typography>
 							<ul>
 								{footer.description.map((item) => (
+									// Add Github link ???
 									<li key={item}>
-										<Link href="#" variant="subtitle1" color="textSecondary">
+										<Link href="" variant="subtitle1" color="textSecondary">
 											{item}
 										</Link>
 									</li>
